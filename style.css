@@ -1,0 +1,57 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #292929;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    width: 50%;
+    height: 650px;
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 900px;
+}
+
+.card{
+    width: 23%;
+    height: 33%;
+    margin: 5px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.front-face,
+.back-face{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #393f4d;
+    backface-visibility: hidden;
+}
+
+.card:active{
+    transform: scale(0.95);
+    transition: transform 0.3s;
+}
+
+.card.flip{
+    transform: rotateY(180deg);
+}
+
+.front-face{
+    transform: rotateY(180deg);
+}
